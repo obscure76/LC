@@ -13,11 +13,11 @@ def build_seg_tree(tree, arr, ti, l, r):
 
 def build_seg_tree_v2(nums):
     n = len(nums)
-    print n
+    print(n)
     my_tree = [0]*(2*n)
-    for i in xrange(n, 2*n):
+    for i in range(n, 2*n):
         my_tree[i] = nums[i-n]
-    for i in xrange(n-1, 0, -1):
+    for i in range(n-1, 0, -1):
         my_tree[i] = my_tree[i*2] + my_tree[i*2+1]
     return my_tree
 
@@ -68,4 +68,4 @@ tree = [0]*((2**(h+1))-1)
 # build_seg_tree(tree, arr, 0, 0, ll-1)
 # print tree
 #print query_seg_tree(tree, 0, 0, len(tree)-1, 0, 0)
-print build_seg_tree_v2(arr)
+print(build_seg_tree_v2(arr))
